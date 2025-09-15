@@ -1,0 +1,62 @@
+@startmindmap
+* RESTful API Design & Implementation
+** Best Practices
+*** Use only nouns for URIs
+**** /students, /students/SID
+**** Avoid verbs like /getAllStudents
+
+*** GET methods
+**** Should NOT alter resource state
+**** Use PUT, POST, DELETE to modify
+
+*** Use plural nouns in URIs
+**** /students vs /student
+
+*** Use sub-resources for relationships
+**** /students/3/courses
+**** /students/3/courses/2
+
+*** HTTP headers for I/O formats
+**** Content-Type: request format (e.g. JSON)
+**** Accept: acceptable response formats (e.g. JSON, text/javascript)
+
+*** Filtering & Paging
+**** Query parameters for filters
+***** ?department=computing
+**** Offset & limit for paging
+
+*** Version your API
+**** /v2/students
+
+*** Use proper HTTP status codes
+**** 200: OK
+**** 201: Created
+**** 204: No Content (Deleted)
+**** Others: errors, redirects, etc.
+
+** RESTful Service Implementation Example (Java + Jersey)
+*** Resource Representation Class
+**** Student: id, full name, department
+
+*** Create API class with Jersey
+**** @Path("/studentcourseapi")
+**** Annotations:
+***** @POST, @Consumes(JSON), @Produces(XML), @Path("/students")
+**** Implement method:
+***** Create student object, save, return response
+
+*** Deploy API
+**** Using Apache or other web server
+
+*** Test API
+**** Client app or CURL command
+**** Example CURL:
+***** POST JSON {"name":"James Dean", "department":"Computing Science"}
+
+** Key Takeaways
+*** REST uses resource-based URIs
+*** HTTP methods define actions
+*** JSON or XML for data format
+*** Stateless, scalable, consistent design
+
+@endmindmap

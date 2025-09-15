@@ -1,0 +1,36 @@
+@startmindmap
+* Mã hóa đám mây (Cloud Encryption)
+** Vai trò quan trọng
+*** Tuyến phòng thủ cuối cùng trong bảo mật
+*** Kiểm soát truy cập, quản lý khóa và chứng chỉ
+** Cơ chế mã hóa
+*** Thuật toán mã hóa
+*** Khóa giải mã
+*** Chỉ người được ủy quyền mới giải mã
+** Bảo vệ dữ liệu theo trạng thái
+*** Dữ liệu khi lưu trữ (At rest)
+**** Block/File/Object/DB Encryption
+*** Dữ liệu khi truyền (In transit)
+**** SSL, TLS, xác thực đầu cuối
+*** Dữ liệu khi sử dụng (In use)
+**** Xử lý trực tiếp trên dữ liệu mã hóa
+** Phân loại mã hóa
+*** Phía máy chủ (Server-side)
+**** CSK – Khách hàng cung cấp khóa
+**** CMK – Khách hàng quản lý qua KMS
+*** Phía khách hàng (Client-side)
+**** Mã hóa trước khi gửi
+**** Cloud không biết khóa => tăng bảo mật
+** Multi-cloud encryption
+*** Chiến lược bảo mật thống nhất
+*** Bảng điều khiển tập trung
+**** Quản lý truy cập, khóa, logs
+** Quản lý khóa mã hóa
+*** Quản lý vòng đời khóa (Lifecycle)
+*** Khách hàng giữ khóa
+*** Thực hành tốt
+**** Lưu trữ tách biệt
+**** Backup và audit định kỳ
+**** Đổi khóa theo chu kỳ
+**** MFA cho khóa chính và phục hồi
+@endmindmap

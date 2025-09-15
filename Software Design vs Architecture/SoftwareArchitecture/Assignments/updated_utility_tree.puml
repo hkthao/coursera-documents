@@ -1,0 +1,22 @@
+@startwbs
++ Utility
+++ Performance
++++ Latency
+++++ It takes less than 1 second to complete any given task. (H)
+++++ Data updates are pushed to clients within 500ms under normal load (M).
+++ Security
++++ Authentication
+++++ A user must create or have an account to use the app. (H)
++++ Authorization
+++++ A user can only edit items they own (H)
+++++ A user cannot place a bid on their own items. (H)
+++ Interoperability
++++ Shared Storage
+++++ User data must be in shared storage (H)
++++ Accessibility
+++++ Users can access their data from the Sharing Mobile App (H)
+++++ Users can access their data from the Sharing Web App (H)
+++ Concurrency
++++ Scalability
+++++ The system must support 100 concurrent users searching for items with a response time of less than 3 seconds (H).
+@endwbs

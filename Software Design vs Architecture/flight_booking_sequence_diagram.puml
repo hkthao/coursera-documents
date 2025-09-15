@@ -1,0 +1,51 @@
+@startuml
+actor Customer
+participant BookingWebsite
+database FlightDatabase
+participant Cart
+
+Customer -> BookingWebsite: Open booking website
+activate BookingWebsite
+
+BookingWebsite --> Customer: Display flight search interface
+
+Customer -> BookingWebsite: Enter desired location and departure/arrival date
+activate Customer
+
+BookingWebsite -> FlightDatabase: Request available flights (location, date)
+activate FlightDatabase
+FlightDatabase --> BookingWebsite: Return list of flights
+deactivate FlightDatabase
+
+BookingWebsite --> Customer: Display available flights
+
+Customer -> BookingWebsite: Select flight
+deactivate Customer
+
+BookingWebsite -> Cart: Add flight to cart
+activate Cart
+Cart --> BookingWebsite: Confirm added to cart
+deactivate Cart
+
+Customer -> BookingWebsite: Proceed to checkout
+activate Customer
+
+BookingWebsite -> Customer: Request payment information
+
+Customer -> BookingWebsite: Enter payment information
+deactivate Customer
+
+BookingWebsite -> FlightDatabase: Update remaining seats and confirm booking
+activate FlightDatabase
+FlightDatabase --> BookingWebsite: Confirm update and successful booking
+deactivate FlightDatabase
+
+BookingWebsite -> Cart: Empty cart
+activate Cart
+Cart --> BookingWebsite: Cart emptied
+deactivate Cart
+
+BookingWebsite --> Customer: Display ticket confirmation and flight information
+
+deactivate BookingWebsite
+@enduml

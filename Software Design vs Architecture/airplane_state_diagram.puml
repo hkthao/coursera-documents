@@ -1,0 +1,21 @@
+@startuml
+state "Waiting for assignment" as Waiting
+state "Assigned to flight" as Assigned
+state "Ready for takeoff" as Ready
+state "En route" as EnRoute
+state "Landing" as Landing
+state "Landed/Checking" as Checking
+state "Maintenance required" as Maintenance
+
+
+[*] --> Waiting
+Waiting --> Assigned : assign to flight
+Assigned --> Ready : ready for takeoff
+Ready --> EnRoute : takeoff
+EnRoute --> Landing : destination reached
+Landing --> Checking : landed
+Checking --> Waiting : ready for new flight
+Checking --> Maintenance : maintenance required
+Maintenance --> Waiting : repaired
+Maintenance --> [*] : cannot be repaired
+@enduml

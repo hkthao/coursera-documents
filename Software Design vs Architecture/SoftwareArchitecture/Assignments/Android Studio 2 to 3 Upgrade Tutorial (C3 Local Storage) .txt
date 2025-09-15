@@ -1,0 +1,109 @@
+﻿If you are using Android Studio 2.3 (with API 23) from our previous courses/sessions, please do the following steps to make your code works in Android Studio 3.4 (with API 26)
+
+
+1. Download Android Studio (version 3.4.0 or newer). Replace the old Android Studio on your machine with the newly downloaded software.
+https://developer.android.com/studio
+
+
+2. Install and import Android Studio Settings from previous version 
+  
+
+Delete Unused Android Studio Directories from old versions if you are not using them anymore
+  
+
+
+
+Open pre-existing code (See more detailed steps in Android Studio Setup Tutorial - Mac/Windows, follow until step 3) 
+
+
+3. Replace the content of Module level build.gradle    with the following:
+apply plugin: 'com.android.application'
+
+
+android {
+   compileSdkVersion 26
+   defaultConfig {
+       applicationId "com.example.sharingapp"
+       minSdkVersion 19
+       targetSdkVersion 26
+       versionCode 1
+       versionName "1.0"
+       testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+   }
+   buildTypes {
+       release {
+           minifyEnabled false
+           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+       }
+   }
+}
+
+
+dependencies {
+   implementation fileTree(dir: 'libs', include: ['*.jar'])
+   androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+       exclude group: 'com.android.support', module: 'support-annotations'
+   })
+   implementation files('src/include/gson-2.8.2-SNAPSHOT.jar')
+   implementation 'com.android.support:appcompat-v7:26.1.0'
+   implementation 'com.android.support:support-v4:26.1.0'
+   implementation 'com.android.support:design:26.1.0'
+   testImplementation 'junit:junit:4.12'
+}
+
+
+Alternatively, you can also use the content of this gist to copy the code.
+
+
+   4. Replace the content of Project level build.gradle
+  
+ with the following:
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+buildscript {
+   repositories {
+       google()
+       jcenter()
+   }
+   dependencies {
+       classpath 'com.android.tools.build:gradle:3.4.0'
+
+
+       // NOTE: Do not place your application dependencies here; they belong
+       // in the individual module build.gradle files
+   }
+}
+
+
+allprojects {
+   repositories {
+       google()
+       jcenter()
+   }
+}
+
+
+task clean(type: Delete) {
+   delete rootProject.buildDir
+}
+
+
+Alternatively, you can also use the content of this gist to copy the code.
+ 
+5. Complete step 4 in Android Studio Setup Tutorial - Mac/Windows.
+
+
+6. Rebuild the app by clicking: Build -> Rebuild Project
+  
+
+
+
+7. Complete step 5 in Android Studio Setup Tutorial - Mac/Windows.
+
+
+8. Run the app. A this point you should be able to run the app by clicking the play button. 
+  
+
+  
+                 SDA Android Studio Upgrade Tutorial |

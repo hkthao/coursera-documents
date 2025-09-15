@@ -1,0 +1,48 @@
+@startuml
+actor User
+participant AddItemActivity
+participant ItemList
+participant Item
+participant Dimensions
+
+User -> AddItemActivity: Start app / Open Add Item screen
+activate AddItemActivity
+
+AddItemActivity -> AddItemActivity: onCreate()
+activate AddItemActivity
+
+AddItemActivity -> ItemList: loadItems()
+activate ItemList
+ItemList --> AddItemActivity: Return loaded items
+deactivate ItemList
+
+User -> AddItemActivity: Input item details (e.g., name, dimensions)
+
+AddItemActivity -> Item: <<create>> Item(name, ...)
+activate Item
+Item -> Dimensions: <<create>> Dimensions(length, width, height)
+activate Dimensions
+Dimensions --> Item: Return Dimensions object
+deactivate Dimensions
+Item --> AddItemActivity: Return Item object
+deactivate Item
+
+AddItemActivity -> ItemList: addItem(item)
+activate ItemList
+ItemList --> AddItemActivity: Item added confirmation
+deactivate ItemList
+
+AddItemActivity -> AddItemActivity: saveItem()
+activate AddItemActivity
+
+AddItemActivity -> ItemList: saveItems()
+activate ItemList
+ItemList --> AddItemActivity: Items saved confirmation
+deactivate ItemList
+
+AddItemActivity --> User: Return to Home Screen
+
+deactivate AddItemActivity
+deactivate AddItemActivity
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+state "Available without photo" as Available_NoPhoto
+state "Available with photo" as Available_WithPhoto
+state "Borrowed without photo" as Borrowed_NoPhoto {
+  borrower: [borrower_id]
+}
+state "Borrowed with photo" as Borrowed_WithPhoto {
+  borrower: [borrower_id]
+}
+
+[*] --> Available_NoPhoto : new item
+
+Available_NoPhoto --> Available_WithPhoto : add photo
+Available_WithPhoto --> Available_NoPhoto : remove photo
+
+
+Available_NoPhoto --> Borrowed_NoPhoto : borrow
+Available_WithPhoto --> Borrowed_WithPhoto : borrow
+
+Borrowed_NoPhoto --> Available_NoPhoto : return
+Borrowed_WithPhoto --> Available_WithPhoto : return
+
+Borrowed_NoPhoto --> Borrowed_WithPhoto : add photo
+Borrowed_WithPhoto --> Borrowed_NoPhoto : remove photo
+
+
+Available_NoPhoto --> [*] : remove item
+Available_WithPhoto --> [*] : remove item
+Borrowed_NoPhoto --> [*] : remove item
+Borrowed_WithPhoto --> [*] : remove item
+@enduml

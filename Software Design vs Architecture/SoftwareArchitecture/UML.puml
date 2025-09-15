@@ -1,0 +1,44 @@
+@startmindmap
+* Product Line Architecture (Dòng sản phẩm)
+** Khái niệm
+*** Product Line = Product Family
+*** Nhiều sản phẩm chia sẻ code, tính năng
+*** VD: iOS cho iPhone, iPad, iPod Touch
+** Lợi ích
+*** Tiết kiệm chi phí phát triển
+*** Giảm thời gian kiểm thử
+*** Thống nhất UX
+*** Rút ngắn time-to-market
+** Nhược điểm
+*** Cần đầu tư upfront lớn
+*** Không đáng với ít sản phẩm
+** Phân loại tính năng
+*** Commonalities (Chung)
+*** Variations (Một số có)
+*** Product-specifics (Riêng)
+** Quy trình phát triển
+*** Domain Engineering
+**** Xây dựng commonalities & variations
+**** Reference architecture
+*** Application Engineering
+**** Phát triển từng sản phẩm
+**** Chọn variation
+**** Triển khai product-specifics
+**** Tích hợp & test
+** Reference Architecture
+*** Áp dụng toàn product line
+*** Hỗ trợ variation & bền vững
+** Kỹ thuật hiện thực variations
+*** Adaptation (config/override)
+*** Replacement (thay component)
+*** Extension (plugin/add-on)
+** Thời điểm variation
+*** Design time
+*** Build time
+*** Launch time
+*** Runtime (dynamic)
+** Kết luận
+*** Tối ưu reuse code
+*** Giảm chi phí, tăng chất lượng, UX
+*** Đòi hỏi domain engineering mạnh
+@endmindmap

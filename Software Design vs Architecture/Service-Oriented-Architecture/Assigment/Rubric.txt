@@ -1,0 +1,128 @@
+Does the learner appear to have randomly generated a number to use as their index? 
+
+0 points
+No, the learner used the default value, INDEX = “uniqueindex”
+
+1 point
+Yes, the index appears to be random.
+
+Has the learner implemented a GetBidListTask() method in the ElasticSearchManager class?
+
+0 points
+No, either it is not implemented, or clearly it is incorrect. 
+
+1 point
+Yes, and it looks like it will work (it is analogous to GetItemListTask() and GetUserListTask())
+
+Has the learner implemented a AddBidTask() method in the ElasticSearchManager class?
+
+0 points
+No, either it is not implemented, or clearly it is incorrect. 
+
+1 point
+Yes, and it looks like it will work (it is analogous to AddItemTask() and AddUserTask())
+
+Has the learner implemented a RemoveBidTask() method in the ElasticSearchManager class?
+
+0 points
+No, either it is not implemented, or clearly it is incorrect. 
+
+1 point
+Yes, and it looks like it will work (it is analogous to RemoveItemTask() and RemoveUserTask())
+
+Has the learner modified the AddBidCommand class to save the bid remotely rather than locally?
+
+0 points
+No, either it is not changed, or it is clearly incorrect.
+
+1 point
+Yes, and it looks like it will work (it is analogous to AddItemCommand and AddUserCommand).
+
+Has the learner modified the DeleteBidCommand class to save the bid remotely rather than locally?
+
+0 points
+No, either it is not changed, or it is clearly incorrect.
+
+1 point
+Yes, and it looks like it will work (it is analogous to DeleteItemCommand and DeleteUserCommand).
+
+Has the learner added a getRemoteBids() method to the BidList class?
+
+0 points
+No, either it has not been implemented, or it is clearly incorrect.
+
+1 point
+Yes, and it looks like it will work (it is analogous to ItemList’s getRemoteItems() and UserList’s getRemoteUsers() method).
+
+
+Has the learner removed the loadBids() method from the BidList class?
+
+0 points
+No, the method is still there. 
+
+1 point
+Yes, the loadBids() method has been removed.
+
+Has the learner added a getRemoteBids() method to the BidListController class?
+
+0 points
+No, either it has not been implemented, or it is clearly incorrect.
+
+1 point
+Yes, and it looks like it will work (it is analogous to ItemListController’s getRemoteItems() and UserListController’s getRemoteUsers() method).
+
+Has the learner removed the loadBids() method from the BidListController class?
+
+0 points
+No, the method is still there. 
+
+1 point
+Yes, the loadBids() method has been removed.
+
+Has the addBid() method in the BidListController class been modified to take in only the required number of arguments? (i.e. bid_list and context are no longer passed in as arguments to these methods).
+
+0 points
+No, some or all of these methods still take bid_list and/or context as an argument.
+
+1 point
+Yes, these methods have been modified to take in only the required number of arguments. 
+
+Has the removeBid() method in the BidListController class been modified to take in only the required number of arguments? (i.e. bid_list and context are no longer passed in as arguments to these methods).
+
+0 points
+No, some or all of these methods still take bid_list and/or context as an argument.
+
+1 point
+Yes, these methods have been modified to take in only the required number of arguments. 
+
+Has the removeItemBids() method in the BidListController class been modified to take in only the required number of arguments? (i.e. bid_list and context are no longer passed in as arguments to these methods).
+
+0 points
+No, some or all of these methods still take bid_list and/or context as an argument.
+
+1 point
+Yes, these methods have been modified to take in only the required number of arguments. 
+
+Has the ViewItemActivity view been modified to use the BidListController’s getRemoteBids() method?
+
+0 points
+No, the loadBids() method is still called. 
+
+1 point
+Yes, ViewItemActivity now calls the BidListController’s getRemoteBids() method instead of the loadBids() method. 
+
+Has the ViewItemBidsActivity view been modified to use the BidListController’s getRemoteBids() method?
+
+0 points
+No, the loadBids() method is still called. 
+
+1 point
+Yes, ViewItemBidsActivity now calls the BidListController’s getRemoteBids() method instead of the loadBids() method. 
+
+Has the ItemFragmentAdapter been modified to use the BidListController’s getRemoteBids() method?
+
+0 points
+No, the loadBids() method is still called. 
+
+1 point
+Yes, ItemFragmentAdapter now calls the BidListController’s getRemoteBids() method instead of the loadBids() method. 
